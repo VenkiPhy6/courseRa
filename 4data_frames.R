@@ -15,7 +15,7 @@ x[,2]
 x[1:5,]
 x[,1:2]
 x[1:3,2]
-x[x<2,] #Conditional index
+x[x$foo<4,] #Conditional index
 x['foo'] #Namewise
 x['bar']
 x[['f', exact=F]] #Partial matching
