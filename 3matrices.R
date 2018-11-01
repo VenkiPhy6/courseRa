@@ -17,7 +17,6 @@ rbind(y3, y4) #Intersting results
 cbind(y4, y3)
 
 
-
 #Matrix attributes----
 dim(m1)
 attributes(m1)
@@ -38,3 +37,11 @@ attributes(x2) #The names atrribute now got lost?
 x2 <- as.vector(x2)
 x2
 names(x2) #It looks like it...
+
+
+#Subsetting a Matrix----
+m2[1,2] #Unlike a list, no need for double braces. Note that return type is not a matrix but a vector..
+m2[1,] 
+m2[,1]
+m2[2,2, drop = F] #To return a matrix itself, use drop argument.
+m2[2, , drop = F]

@@ -21,6 +21,7 @@ names(x1) <- x6 #Naming a vector's element
 x1
 x1['c']
 
+
 #Implicit coercion----
 #A vector of different class types will get "coerced" to the least common denominator
 y1 <- c('a', 10, T)
@@ -33,7 +34,9 @@ class(y3)
 y4 <- c(10L, 3)
 class(y4)
 y4
-#character < complex < numeric < integer < logical. If a lower one is in the vector that will be its type
+#character < complex < numeric < integer < logical. 
+#If a lower one is in the vector that will be its type
+
 
 #Explicit coercion----
 as.integer(x1)
@@ -51,6 +54,19 @@ as.logical(x6)         #That works?!
 z1 <- c(1.9, 3.6)
 as.integer(z1) #Truncates
 
+
+#Subsetting a vector----
+#Numeric indices
+x6[2]
+x6[4] #Doesnt throw an error. Just says NA!
+x6[1:3]
+#Logical indices
+x6[x6 < 'c']
+u <- x6 > 'a' #We did Masking by just assigned a condition to a variable...
+u
+x6[u]
+
+
 #Creating list----
 a1 <- list('venki', T, 5.3, 9L, 7+1.3i) #list of different classes
 a1
@@ -64,3 +80,25 @@ a3
 names(a1) <- x6 #Naming a list's elements
 a1
 a1['a']
+
+
+#Subsetting a list----
+names(a2) <- c('names', 'truth', 'numbers')
+a2
+a2[1] #Single bracket returns same class object as that being indexed. So index a list you get a list
+a2[5]
+a2['names']
+a2[[2]] #Double bracket may not return same class object as being indexed. So list returns vector...
+a2[[3]]
+a2[['names']]
+a2[['truth']]
+a2$names #Same semantics as Double bracket except you don't have to pass a string for named elements
+a2$numbers
+a2[[names]] #Wont work
+d <- 'names' #If index is to be computed $ can't be used
+a2[[d]]
+a2$d #Wont work properly
+a2$names
+a2[[4]][[1]] #Recurse into a list
+a2[[c(5,2)]]
+a2[c(3,2)] #Can't Recurse with this. But can get multiple elements simultaneously.
