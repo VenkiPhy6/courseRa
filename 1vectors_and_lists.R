@@ -1,6 +1,12 @@
 #See Week 1 in JHU course - R Programming
 #Data Types - Vectors and Lists
 
+#A number is a vector in R----
+a1 <- c(10,20,30,40)
+a1 *2 + 100 #This command is interpreted by R as a1 * c(2,2,2,2) + c(100,100,100,100). It recycles!
+a1 * c(11,12,13) #The recycling behaviour is clearly seen here.
+
+
 #Creating various class of Vectors----
 #vector <- an atomic class of elements
 x1 <- c(1,2,3,4) #numeric
