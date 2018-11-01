@@ -19,7 +19,6 @@ x9
 
 names(x1) <- x6 #Naming a vector's element
 x1
-x1['c']
 
 
 #Implicit coercion----
@@ -56,16 +55,20 @@ as.integer(z1) #Truncates
 
 
 #Subsetting a vector----
-#Numeric indices
-x6[2]
+x6[2] #Numeric indices
 x6[4] #Doesnt throw an error. Just says NA!
 x6[1:3]
-#Logical indices
-x6[x6 < 'c']
+x6[x6 < 'c'] #Logical indices
 u <- x6 > 'a' #We did Masking by just assigned a condition to a variable...
 u
 x6[u]
 
+names(x1) <- c('hi', 'whatup', 'hey') #Subsetting with name
+x1['hi'] 
+u <- 'hi'
+x1[u]
+x1$hi #'$ operator invalid for atomic vectors'
+x1[['wh', exact=F]] #Partial matching with double braces. Since dollar doesn't work.  
 
 #Creating list----
 a1 <- list('venki', T, 5.3, 9L, 7+1.3i) #list of different classes
@@ -102,3 +105,12 @@ a2$names
 a2[[4]][[1]] #Recurse into a list
 a2[[c(5,2)]]
 a2[c(3,2)] #Can't Recurse with this. But can get multiple elements simultaneously.
+
+#Partial matching
+a3 = list(aardvark = 1:10, batwalk = 11:20, aarachnid = 15:30)
+a3$aara
+a3$b
+a3[["aard"]] #Double braces dont do partial matching... by default.
+a3[["b"]]
+a3[["aard", exact=F]] 
+a3[["b", exact=F]] 

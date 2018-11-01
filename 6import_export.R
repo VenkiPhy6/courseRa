@@ -55,4 +55,4 @@ as.data.frame(c1) #Not so tidy but still, read just the lines I needed.
 #Connecting to websites
 con3 <- url("http://jhsph.edu",'r')
 c2 <- readLines(con3)
-head(c2)
+head(c2) #Tried to load the entire thing and it crashed! head() exists for a reason...

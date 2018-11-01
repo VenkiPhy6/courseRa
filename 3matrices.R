@@ -45,3 +45,7 @@ m2[1,]
 m2[,1]
 m2[2,2, drop = F] #To return a matrix itself, use drop argument.
 m2[2, , drop = F]
+dim(m2)
+dimnames(m2) <- list(c('row1', 'obs2'), c('col1', 'var2', 'group3'))
+m2
+m2[['o','v', exact=F]] #Partial matching

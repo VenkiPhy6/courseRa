@@ -18,6 +18,16 @@ attributes(y1)
 class(y1)
 
 #Naming the data in a factor
-names(x1) = c(1,2)
+names(x1) = c('first','second', 'third')
 x1
-s
+
+#Subsetting factors----
+#Should work the same as subsetting vectors
+x1[1] #Numerical indices
+x1[5]
+x1[2:4]
+x1[x1 == 'yes'] #Logical indices
+u <- x1 =='no'
+x1[u]
+x1[['t', exact=F]] #Partial matching. 
+x1$t #'$ operator invalid for atomic vectors' as expected from vectors
