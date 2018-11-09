@@ -1,12 +1,6 @@
 #See Week 1 in JHU course - R Programming
 #Data Types - Vectors and Lists
 
-#A number is a vector in R----
-a1 <- c(10,20,30,40)
-a1 *2 + 100 #This command is interpreted by R as a1 * c(2,2,2,2) + c(100,100,100,100). It recycles!
-a1 * c(11,12,13) #The recycling behaviour is clearly seen here.
-
-
 #Creating various class of Vectors----
 #vector <- an atomic class of elements
 x1 <- c(1,2,3,4) #numeric
@@ -25,6 +19,8 @@ x9
 
 names(x1) <- x6 #Naming a vector's element
 x1
+
+c(x1, x2)
 
 
 #Implicit coercion----
@@ -64,6 +60,7 @@ as.integer(z1) #Truncates
 x6[2] #Numeric indices
 x6[4] #Doesnt throw an error. Just says NA!
 x6[1:3]
+x6[c(-2,-3)]; x6[-c(2,3)] #Negative indices mean 'except'
 x6[x6 < 'c'] #Logical indices
 u <- x6 > 'a' #We did Masking by just assigned a condition to a variable...
 u
@@ -75,6 +72,19 @@ u <- 'hi'
 x1[u]
 x1$hi #'$ operator invalid for atomic vectors'
 x1[['wh', exact=F]] #Partial matching with double braces. Since dollar doesn't work.  
+
+
+#Functions on vectors----
+a <- c("My", "name", "is")
+paste(a)
+paste(a, collapse=' ')
+paste("Hello", "world!", sep=" ")
+paste(1:3, c('X', 'Y', 'Z'), sep="")
+paste(LETTERS, 1:4, sep='-') #Coercion & recycling are happening.
+x10 <- x1; identical(x1, x10)
+length(x1)
+dim(x1) #Unexpectedly, dim won't give length!
+
 
 #Creating list----
 a1 <- list('venki', T, 5.3, 9L, 7+1.3i) #list of different classes

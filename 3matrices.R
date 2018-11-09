@@ -15,6 +15,8 @@ y3 <- 1:3
 y4 <- 11:15
 rbind(y3, y4) #Intersting results
 cbind(y4, y3)
+y3 <- c("a","b", "c")
+cbind(y1,y3) #Implicit coercion
 
 
 #Matrix attributes----
@@ -25,7 +27,7 @@ x1 <- c(4,5,9,11)
 dim(x1) <- c(2,2)
 x1
 dimnames(x1) <- list(c('a','b'), c('c','d')) #Naming a matrix's rows and columns
-x1
+x1 #So basically A MATRIX IS JUST A VECTOR WITH THE dim() ATTRIBUTE NOT NULL.
 
 #Sometimes atrributes get lost
 x2 <- 1:14
