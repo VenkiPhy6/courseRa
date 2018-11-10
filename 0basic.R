@@ -20,3 +20,5 @@ rep(c(1,2,3), each=10)
 a1 <- c(10,20,30,40)
 a1 *2 + 100 #This command is interpreted by R as a1 * c(2,2,2,2) + c(100,100,100,100).
 a1 * c(11,12,13) #The behaviour of recycling numbers as vectors is clearly seen here.
+
+

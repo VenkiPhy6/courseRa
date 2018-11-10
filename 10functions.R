@@ -29,6 +29,11 @@ args(paste) #Output shows ... since you can give a variable number of arguments
 args(cat)
 sep("my", "cat", se=":") #Partial matching won't work for arguments that come after :
 
+#Defining new operators!!
+"%p%" <- function(string1, string2){ # Remember to add arguments!
+  paste(string1, string2)
+}
+
 
 #Function calls----
 vect1 <- computeMean(airquality, F)
@@ -41,6 +46,7 @@ vect2
 vect3
 vect4
 vect5
+"I" %p% "am" %p% "Venki"
 
 
 #Functions on functions----

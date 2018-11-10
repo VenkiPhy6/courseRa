@@ -2,6 +2,7 @@
 
 #Creating--------
 #Dates
+Sys.Date()
 x1 <- as.Date("1970-01-01") #Dates are stored as number of days from Jan 1, 1970.
 class(x1)
 unclass(x1)
