@@ -31,7 +31,7 @@ sep("my", "cat", se=":") #Partial matching won't work for arguments that come af
 
 #Defining new operators!!
 "%p%" <- function(string1, string2){ # Remember to add arguments!
-  paste(string1, string2)
+  paste(string1, string2, split="")
 }
 
 
