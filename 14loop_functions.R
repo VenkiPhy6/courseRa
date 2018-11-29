@@ -1,6 +1,10 @@
 #Looping functions
+#See Hadley Wickham's Journal of Statistical Software paper titled 'Split-Apply-Combine Strategy for Data Analysis'.
 
 #lapply----
+
+#l(ist )apply
+
 # function (X, FUN, ...) 
 # {
 #   FUN <- match.fun(FUN)
@@ -23,6 +27,7 @@ x4
 lapply(x4, function(elt) elt[,1]) #Using anonymous function!
 
 #sapply----
+#s(implify list )apply
 #Returns a vector or list accordingly
 sapply(x4, mean) #Here every output element has a length 1 and so a vector was returned.
 sapply(x4, mean, simplify = F) #To avoid above behavior
@@ -76,12 +81,14 @@ tapply(x7, f1, range)
 #If tapply didn't apply functions...
 split(x7, f1)
 lapply(split(x7, f1), mean) #Same as line 72
-#Better Example
+
+#An example
 head(airquality)
 s <- split(airquality, airquality$Month)
 lapply(s, function(x) colMeans(x[, c("Ozone", "Solar.R", "Wind")]))
-sapply(s, function(x) colMeans(x[, c("Ozone", "Solar.R", "Wind")])) #Gives a matrix
+apply(s, function(x) colMeans(x[, c("Ozone", "Solar.R", "Wind")])) #Gives a matrix
 sapply(s, function(x) colMeans(x[, c("Ozone", "Solar.R", "Wind")], na.rm=TRUE))
+
 #Multiple factors
 x8 <- rnorm(1:10)
 x8
@@ -92,3 +99,8 @@ f3
 interaction(f2,f3) #shows the 10 possible combination
 split(x8, list(f2, f3)) #Can pass the interaction too
 split(x8, list(f2, f3), drop=T) #To avoid empty levels
+
+#vapply----
+#Specify the output class
+#I like to call it 'vigilant' apply
+vapply(s, function(x) colMeans(x[, c("Ozone", "Solar.R", "Wind")]), matrix) #We make sure that it returns a vector

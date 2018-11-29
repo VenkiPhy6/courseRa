@@ -20,3 +20,11 @@ x['foo'] #Namewise
 x['bar']
 x[['f', exact=F]] #Partial matching
 x[['b', exact=F]]
+
+#Exploring a data frame----
+str(x)
+viewinfo() #Doesn't work here for some reason
+head(x)
+tail(x)
+table(x$foo)
+data(x) #What does this do exactly?
