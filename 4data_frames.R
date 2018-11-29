@@ -4,9 +4,6 @@
 #Creating data frames----
 x <- data.frame(foo = 1:6, bar = c(T, F, F, T, F, F))
 x
-nrow(x)
-ncol(x)
-
 
 #Subsetting a data frame----
 x[1,2] #Numerical indices
@@ -22,9 +19,18 @@ x[['f', exact=F]] #Partial matching
 x[['b', exact=F]]
 
 #Exploring a data frame----
-str(x)
-viewinfo() #Doesn't work here for some reason
+dim(x)
+nrow(x)
+ncol(x)
+object.size(x)
+names(x)
 head(x)
+head(x, 10)
 tail(x)
+tail(x, 15)
+summary(x)
 table(x$foo)
+str(x) #Cn be used on funtions and other objects also
+
 data(x) #What does this do exactly?
+viewinfo() #Doesn't work here for some reason

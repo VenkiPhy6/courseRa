@@ -1,6 +1,7 @@
 #Debugging in R
 #DEBUGGING IS NOT A SUBSTITUTE 
 #There are three generic conditions - Message, Warning, Error
+#To supress warnings - https://stackoverflow.com/questions/16194212/how-to-suppress-warnings-globally-in-an-r-script
 
 x1 <- log(-1) #Warning
 
