@@ -3,12 +3,13 @@ if(!file.exists('data')){
   dir.create('data')
 }
 
-fileUrl <- "https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?accessType=DOWNLOAD"
-download.file(fileUrl, destfile = './data/cameras.csv', method = 'curl') #Learn more about curl
+#This url won't work anymore
+#fileUrl <- "https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?accessType=DOWNLOAD"
+#download.file(fileUrl, destfile = './data/cameras.csv', method = 'curl') #Learn more about curl
 #list.files('./data')
 
 dateDownloaded <- date() #Files change with time. So if someone has to reproduce they should know the date
-#dateDownloaded
+#dateDownloaded 
 
 
 #Reading-----
